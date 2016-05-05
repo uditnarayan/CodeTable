@@ -1,0 +1,74 @@
+.code-editor{
+	display: block;
+}
+#home{
+	float: right;
+	text-decoration: none;
+	color:blue;
+	font-size: 1.1em;
+}
+#name {
+	font-size: 1.5em;
+	color: blue;
+	display: inline-block;
+	cursor: pointer;
+}
+
+#tempNameCover {
+	display: none;
+}
+
+#tempName{
+	padding: 5px 10px; 
+}
+
+#tempNameCover button{
+	padding: 5px 10px; 
+	margin-right: 10px; 
+}
+
+#lang{ 
+	padding: 5px 10px; 
+}
+
+#aboveCodeMirror, #belowCodeMirror{
+	padding: 8px;
+	background-color: #e2e5e7;
+	border: 1px solid #e2e5e7;
+	margin: 0; 
+}
+
+#belowCodeMirror button{
+	margin-right: 20px;
+	padding: 5px 10px;
+	min-width: 50px;  
+}
+
+.CodeMirror{
+	border: 1px solid #e2e5e7;
+}
+
+#input{
+	display: none;
+}
+
+#resultCover{
+	display: none
+}
+
+#result{
+	padding:10px;
+	background-color: #FFF
+}
+
+#result div{
+	padding: 10px;
+}
+
+#error{
+	background-color: #e67676;
+	display: none;
+}
+#output{
+	background-color: #e2e5e7;
+}

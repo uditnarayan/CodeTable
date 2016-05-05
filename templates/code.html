@@ -1,0 +1,87 @@
+{% extends "layout.html" %}
+{% block title %}Home :: CodeTable{% endblock %}
+
+{% block head %}
+	<link rel="stylesheet" 
+		href="{{ url_for('static', filename='external/CodeMirror-5.13.4/lib/codemirror.css') }}">
+	<link rel="stylesheet" 
+		href="{{ url_for('static', filename='external/CodeMirror-5.13.4/addon/display/fullscreen.css') }}">
+	<link rel="stylesheet" 
+		href="{{ url_for('static', filename='external/CodeMirror-5.13.4//theme/eclipse.css') }}">	
+
+	<link rel="stylesheet" href="{{ url_for('static', filename='style/code.css') }}">
+
+	<script type="text/javascript" 
+		src="{{ url_for('static', filename='external/CodeMirror-5.13.4/lib/codemirror.js') }}">
+	</script>
+	<script type="text/javascript" 
+		src="{{ url_for('static', filename='external/CodeMirror-5.13.4/mode/xml/xml.js') }}">
+	</script>
+	<script type="text/javascript" 
+		src="{{ url_for('static', filename='external/CodeMirror-5.13.4/addon/display/fullscreen.js') }}">
+	</script>
+
+	<script type="text/javascript" src="{{ url_for('static', filename='js/code.js') }}"></script>
+
+{% endblock %}
+
+{% block content %}
+
+	<div class="code-editor">
+		<p id="nameCover">
+			<span id="name">Untitled File</span>
+			<span id="home"><a href="/">Back Home</a></span>
+			<input type="hidden" value={{id}} name="id" id="id"/>
+			<span id="tempNameCover">
+				<input type="text" name="temp-name" id="tempName"/>
+				<button id="saveName">Save</button>
+				<button id="cancelName">Cancel</button>
+			</span>
+		</p>
+
+		<p id="aboveCodeMirror"> 
+			<select id="lang">
+				<option value="PYTHON" selected="">Python (2.7)</option>
+				<option value="JAVA">Java</option>
+			</select>
+		</p>
+		<textarea id="code" name="code" rows="5"></textarea>
+		<p id="belowCodeMirror">
+			<button id="save" value="save">Save</button>
+			<button id="cnr" value="cnr">Compile &amp; Run</button>
+		</p>
+		<br>
+		<input type="checkbox" name="use-custom" id="useCustom"> Use Custom Input <br> <br>
+		<textarea id="input" name="input" rows="8" cols="70"></textarea>
+		<br>
+		<div id="resultCover">
+			<h2>Results</h2>
+			<div id="result">
+				<h3>Compilation Log</h3>
+				<div id="error"></div>
+				<h3>Output</h3>
+				<div id="output">
+				</div>
+				<div id="status">					
+					<span>Compile Status: </span>&nbsp;<span id="compileStatus"></span><br><br>
+					<span>Time Used (sec): </span>&nbsp;<span id="timeUsed"></span><br><br>
+					<span>Memory Used (KB): </span>&nbsp;<span id="memoryUsed"></span><br><br>
+					<span>Local link: </span>&nbsp;<span id="llink"></span><br><br>
+					<span>Hacker earth link:</span>&nbsp;<span id="helink"></span>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		$(function(){
+			var editor = initializeCodeMirror("eclipse");
+			bindSave(editor);
+			bindCNR(editor);
+			bindActions();
+			loadCode(editor);
+		});
+	</script>
+
+{% endblock %}

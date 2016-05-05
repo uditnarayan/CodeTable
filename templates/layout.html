@@ -8,9 +8,8 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='external/jquery-ui/jquery-ui.css') }}">
 
   <script type="text/javascript" src="{{ url_for('static', filename='external/jquery.js') }}"></script>
-  <script type="text/javascript" src="{{ url_for('static', filename='external/jquery-ui/jquery-ui.js') }}"></script>
-  <script type="text/javascript" src="{{ url_for('static', filename='external/d3.v2.js') }}"></script>
-  <script type="text/javascript" src="{{ url_for('static', filename='external/guage.js') }}"></script>
+  <script type="text/javascript" src="{{ url_for('static', filename='external/jquery-ui/jquery-ui.js') }}">
+  </script>
 
   {% block head %}{% endblock %}
 
@@ -27,12 +26,8 @@
       {% block content %}
       {% endblock %}
     </div>
-
-    <footer>
-      {% block footer %}
-        &copy; Copyright 2014 | Udit Narayan | Log Recorder
-      {% endblock %}
-    </footer>
+    <br>
+    <footer>&copy; Copyright 2016 | Udit Narayan | Log Recorder</footer>
 
   </div>
 

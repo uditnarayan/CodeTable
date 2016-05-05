@@ -1,6 +1,46 @@
 body { 
-	margin: 0; padding: 0; font-size: 14px;
+	margin: 0; padding: 0; font-size: 14px; min-height: 800px;
 	background: #f2f5f7 url("../external/jquery-ui/images/ui-bg_highlight-hard_100_f2f5f7_1x100.png") repeat-x;
 }
 
 #wrapper{ margin: 0 auto; width: 980px; padding:10px; }
+#create a,
+#create a:visited,
+#create a:hover{
+	text-decoration: none;
+	color:blue;
+	font-size: 1.1em;
+}
+
+#codeFileListWrapper{
+	clear: both;
+	float: left;
+	width: 100%;
+	display: block;
+	margin: 30px 0;
+}
+
+#codeFileList{
+	display: block;
+	width: 100%;
+}
+.file-item{
+	display: block;
+	width: 100%;
+	border-top:1px solid #e2e5e7;
+}
+
+.file-item:nth-child(odd){
+	background-color: #FFF;
+}
+.file-item:last-child{
+	border-bottom: 1px solid #e2e5e7;
+}
+.table-col-heading{
+	width:: 200px;
+	text-align: left;
+	font-weight: bold;
+}
+.file-item td {
+	width: 200px;
+}
