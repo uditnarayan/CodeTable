@@ -24,7 +24,7 @@ function bindSave(editor)
 		saveCode(editor);
 	});
 
-	setInterval( function(){ $('#save').click() }, 3000);
+	setInterval( function(){ $('#save').click() }, 1000);
 }
 
 function saveCode(editor){
